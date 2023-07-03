@@ -49,4 +49,4 @@ let game = function(numberOfRound) {
 
 
 
-game(5)
+game(1)
