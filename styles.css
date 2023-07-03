@@ -7,16 +7,24 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    flex-direction: column;
   }
   
   #cont-btn {
     display: flex;
+    margin-top: 20px;
   }
   
   .user-choice {
     width: 200px;
     height: auto;
     padding: 5px;
+    margin-right: 10px;
     border: 1px solid white;
     box-sizing: border-box;
+    transition: border-color 0.3s; 
+  }
+
+  .user-choice:hover {
+    border-color: green; /* Change the border color on hover */
   }
