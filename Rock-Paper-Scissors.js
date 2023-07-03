@@ -1,66 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
     let playerScore = 0;
     let computerScore = 0;
+    let choices = ['paper', 'scissors', 'rock'];
   
     const resultText = document.getElementById('result-text');
+    const compTextOut = document.getElementById('computer-out-text');
     const buttons = document.querySelectorAll('.user-choice');
   
-    /* Generate computer choice */
     let getComputerChoice = function() {
-      let choices = ['paper', 'scissors', 'rock'];
-      let i = Math.floor(Math.random() * 3);
-      return choices[i];
+        let i = Math.floor(Math.random() * 3);
+        return choices[i];
     };
-    
-    /* Round logic updates score vars */
-    let playGame = function(playerSelection, computerSelection) {
-      const winningCombinations = {
-        'rock': 'scissors',
-        'scissors': 'paper',
-        'paper': 'rock'
-      };
   
-      if (playerSelection === computerSelection) {
+    let playGame = function(playerSelection, computerSelection) {
+        const winningCombinations = {
+            'rock': 'scissors',
+            'scissors': 'paper',
+            'paper': 'rock'
+    };
+  
+    if (playerSelection === computerSelection) {
         playerScore += 0.5;
         computerScore += 0.5;
+        compTextOut.textContent = 'I CHOSE.... ' + computerSelection + ' and you picked ' + playerSelection + ' This means we draw';
         return 'Draw';
-      }
+    }
   
-      if (winningCombinations[playerSelection] === computerSelection) {
+    if (winningCombinations[playerSelection] === computerSelection) {
         playerScore += 1;
+        compTextOut.textContent = 'I CHOSE.... ' + computerSelection + ' and you picked ' + playerSelection + ' This means you win';
         return 'Player wins';
-      } else {
+    } else {
         computerScore += 1;
+        compTextOut.textContent = 'I CHOSE.... ' + computerSelection + ' and you picked ' + playerSelection + ' This means I win';
         return 'Computer wins';
-      }
-    };
-    
-    /* Update result-text DIV with current game score: */
-    let updateScore = function() {
-      resultText.textContent = 'Player Score: ' + playerScore + '  Computer Score: ' + computerScore;
-    };
-    
-    /* DEFUNCT - ADD reset button needed: */
-    let resetScores = function() {
-      playerScore = 0;
-      computerScore = 0;
-      updateScore();
+        }
     };
   
-    /* MAIN - */
+    let updateScore = function(playerSelection, computerSelection) {
+        //compTextOut.textContent = 'I CHOSE.... ' + computerSelection + ' and you picked ' + playerSelection + ' This means';
+        resultText.textContent = 'Player Score: ' + playerScore + '  Computer Score: ' + computerScore;
+    };
+  
     let game = function() {
-      updateScore();
-      buttons.forEach(function(button) {
+        buttons.forEach(function(button) {
         button.addEventListener('click', function() {
-          let playerSelection = this.id;  //referrs to the id value of the img which in turn translates to userSelection 
-          console.log(playerSelection + 'TEST POINT')
-          let computerSelection = getComputerChoice();
+            let playerSelection = this.id;
+            let computerSelection = getComputerChoice();
   
-          let result = playGame(playerSelection, computerSelection);
-          console.log(result); //Remove
-          updateScore();
+            let result = playGame(playerSelection, computerSelection);
+            updateScore(playerSelection, computerSelection);
         });
       });
+  
+        updateScore('', getComputerChoice()); //Initial
     };
   
     game();
