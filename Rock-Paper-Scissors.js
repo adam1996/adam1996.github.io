@@ -38,12 +38,12 @@ let game = function(numberOfRound) {
 
         let result = playGame(playerSelection, computerSelection);
         console.log(result)
-        console.log('Player Score: ' + playerScore + ' Computer Score: ' + computerScore);
+        console.log('Player Score: ' + playerScore + 'Computer Score: ' + computerScore);
     }
     if (playerScore === computerScore) {
         console.log('DRAW')
     }
-
+    
     playerScore > computerScore ? console.log('You have won') : console.log('The computer has won');
 }
 
