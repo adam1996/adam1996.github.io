@@ -10,7 +10,46 @@ body {
     flex-direction: column;
   }
   
-  #cont-btn {
+  .user-choice.hidden {
+    display: none;
+  }
+  
+  .user-choice {
+    display: none;
+    width: 200px;
+    height: auto;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .user-choice.visible {
+    display: inline-block;
+  }
+  
+  /* OPENING SCNENE STYLING */
+  #opening-scene {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  #opening-scene img {
+    width: 400px;
+    height: auto;
+  }
+  
+  #story {
+    margin-top: 50px;
+  }
+  
+  #start-game {
+    margin-top: 20px;
+  }
+  
+  /*GAME AREA STYLING*/
+  #game-scene {
     display: flex;
     margin-top: 20px;
   }
@@ -22,9 +61,10 @@ body {
     margin-right: 10px;
     border: 1px solid white;
     box-sizing: border-box;
-    transition: border-color 0.3s; 
+    transition: border-color 0.3s;
   }
-
+  
   .user-choice:hover {
     border-color: green; /* Change the border colour on hover */
   }
+  

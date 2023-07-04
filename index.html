@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="Rock-Paper-Scissors.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Rock, paper, scissors! Who will win: </h1>
-    </header>
+  </head>
+  <body>
+    <div id="opening-scene">
+      <img src="./images/Stoke-on-Trent.jpeg" alt="Town Image" />
+      <div id="story">
+        <h2>Backstory:</h2>
+        <p>Once upon a time, the peaceful town of Stoke-on-Trent thrived.</p>
+        <p>
+          One day, an alien overlord invaded the town, threatening its
+          existence.
+        </p>
+        <p>
+          The alien leader challenges you to a game of Rock Paper Scissors to
+          determine the fate of Stoke-on-Trent.
+        </p>
+        <p>It's up to you now as to whether Stoke survives, or perishes!!!</p>
+        <button id="start-game">Start the Game</button>
+      </div>
+    </div>
+
     <main>
-        <div id ="cont-btn">
-            <div id="Rock">
-                <img class="user-choice" src="./images/rock.png" id="rock" alt="Rock"> 
-            </div>
-            <div id="Scissors">
-                <img class="user-choice" src="./images/scissors.png" id="scissors" alt="scissors">
-            </div>
-            <div id="Paper">
-                <img class="user-choice" src="./images/paper.png" id="paper" alt="paper">
-            </div>
+      <div id="game-scene" class="hidden">
+        <div id="Rock">
+          <img
+            class="user-choice"
+            src="./images/rock.png"
+            id="rock"
+            alt="Rock"
+          />
         </div>
+        <div id="Scissors">
+          <img
+            class="user-choice"
+            src="./images/scissors.png"
+            id="scissors"
+            alt="scissors"
+          />
+        </div>
+        <div id="Paper">
+          <img
+            class="user-choice"
+            src="./images/paper.png"
+            id="paper"
+            alt="paper"
+          />
+        </div>
+      </div>
     </main>
+
     <footer>
-        <div id="computer-out-text">
-            <p id="computer-out-text"></p>
-        </div>
-        <div id="result-text">
-            <p id="result-text">Who will win? Click a button above to find out</p>
-        </div>
+      <div id="computer-out-text">
+        <p id="computer-out-text"></p>
+      </div>
+      <div id="result-text">
+        <p id="result-text">Who will win? Click a button above to find out</p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
